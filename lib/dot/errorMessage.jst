@@ -343,6 +343,7 @@
           , schemaPath: {{=$errSchemaPathString}} + '/{{=$keyword}}'
           , params: { errors: {{=$errors}} }
           , message: {{=templateExpr($schemaMessage)}}
+          , errorData: {{=JSON.stringify(it.schema.errorData || {})}}
           {{? it.opts.verbose }}
             , schema: {{=it.util.toQuotedString($schemaMessage)}}
             , parentSchema: validate.schema{{=it.schemaPath}}
